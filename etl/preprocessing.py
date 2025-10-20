@@ -84,7 +84,7 @@ def clean_and_convert_to_parquet(input_path: str, output_path: str):
     )
 
     # --- Drop invalid or incomplete rows ---
-    valid_condition =(
+    valid_condition = (
         (col("ward").isNotNull())
         & (col("bed_number").isNotNull())
         & (col("start_time").isNotNull())
@@ -92,7 +92,7 @@ def clean_and_convert_to_parquet(input_path: str, output_path: str):
         & (col("duration").isNotNull())
         & (col("duration") >= 0)
         & (col("posture").isNotNull())
-        & (col("start_time") < col("end_time"))  
+        & (col("start_time") < col("end_time"))
     )
 
     df_cleaned = df.filter(valid_condition)
@@ -110,7 +110,7 @@ def clean_and_convert_to_parquet(input_path: str, output_path: str):
     print(f"💾 Writing cleaned Parquet to: {output_path}")
     df_cleaned.write.mode("overwrite").parquet(output_path)
 
-     # --- Optionally show dropped rows ---
+    # --- Optionally show dropped rows ---
     print("🔍 Sample of dropped rows:")
     df_dropped.show(10, truncate=False)
 
