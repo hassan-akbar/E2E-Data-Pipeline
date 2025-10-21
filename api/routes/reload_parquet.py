@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException, Header, status
-from api.services.parquet_reader import reload_parquet
+from services.parquet_reader import reload_parquet
 
 import os
 

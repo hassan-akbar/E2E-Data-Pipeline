@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from api.services.parquet_reader import get_patient_summary
-from api.models.patient_metrics_schema import PatientSummary
+from services.parquet_reader import get_patient_summary
+from models.patient_metrics_schema import PatientSummary
 
 router = APIRouter()
 

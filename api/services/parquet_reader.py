@@ -4,7 +4,7 @@ from fastapi import HTTPException, status
 
 logger = logging.getLogger(__name__)
 
-GOLD_PATH = "././data/analytics/pose_data_metrics"
+GOLD_PATH = "data/analytics/pose_data_metrics"
 
 
 # Load parquet once at startup - enables fast memory load as opposed to IO
@@ -15,6 +15,7 @@ try:
 except Exception as e:
     logger.error(f"Failed to load Parquet: {e}")
     PARQUET_DF = pd.DataFrame()
+
 
 
 def get_patient_summary(ward: str, bed_number: str):

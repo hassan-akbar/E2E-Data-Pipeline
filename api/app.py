@@ -1,8 +1,8 @@
 # api/app.py
 from fastapi import FastAPI
 import logging
-from api.routes.patient_summary import router as patient_router
-from api.routes.reload_parquet import router as reload_parquet_router
+from routes.patient_summary import router as patient_router
+from routes.reload_parquet import router as reload_parquet_router
 from dotenv import load_dotenv
 
 load_dotenv()
