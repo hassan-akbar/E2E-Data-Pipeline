@@ -1,1 +1,5 @@
 pyspark
+fastapi
+pandas
+dotenv
+pydantic
